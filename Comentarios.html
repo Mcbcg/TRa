@@ -1,0 +1,80 @@
+<html>
+ <head>
+     <title> Comentarios </title> 
+        <style>
+            *{margin:0;
+            padding: 0;
+            box-sizing: border-box;
+            }
+            .container > h2{
+                background-color: aliceblue;
+                padding:10px ;
+            }
+            .fio{
+               padding: 10px; 
+               border: 1px dashed aliceblue;
+            }
+            .respostas{
+                margin: 0 10px;
+            }
+            .respostas p{
+                font-size: 18px;
+                color: #333;
+            }
+            textarea{
+                width: 100%;
+                height: 40px;
+                border: 1px solid aliceblue;
+            }
+
+
+        </style>
+ </head>
+ <body>
+    
+        <div class="container">
+          <h2>Comentários</h2>
+           <div class="fio">
+                <h2> Em relação ao produto</h2>
+               <div class="respostas">
+                
+                  <form>
+                        <textarea></textarea>
+                  <input type= "submit" name ="acao" value="enviar"/>  
+                  </form>
+                   </div>
+            
+                 <div class="fio">
+                      <h2> Em relação ao contexto do produto(local, atendimento,etç) </h2>
+                   <div class="respostas">
+                      
+                         <form>
+                                <textarea></textarea>
+                          <input type= "submit" name ="acao" value="enviar"/>  
+                          </form>
+                           </div>
+        </div>
+        <script>
+            let buttonsResposta = document.querySelectorAll('.fio button');
+            for(let i = 0; i <buttonsResposta.length; i++){
+                buttonsResposta[i].addEventListener('click',()=>{
+                    let respostas = document.querySelectorAll('.respostas');
+                    respostas[i].style.display = "block";
+                })
+            }
+            let forms = document.querySelectorAll('form');
+            for(let i = 0; i <forms.length; i++){
+                forms[i].addEventListener('submit',(e)=>{
+                    e.preventDefault();
+                    let conteudo = document.querySelectorAll('textarea')[i];
+                    forms[i].insertAdjacentHTML('beforebegin','<p>'+conteudo.value+'</p>')
+                    counteudo.value
+                })
+            }
+        </script>
+    </body>
+
+
+
+
+</html>
